@@ -171,6 +171,11 @@ nav li .img{
   text-align: center;
 }
 
+input,
+textarea{
+  border: 1px solid rgb(197, 197, 197);
+}
+
 .form label{
   text-align: left;
 }
@@ -283,17 +288,46 @@ nav li .img{
   color: white;
 }
 
+.config-btns{
+  display: none;
+}
+
 @media(max-width: 750px){
 
   nav li .img{
     margin-top: -40px;
-    margin-left: -40px;
+    margin-left: -25px;
     width: 80px;
     height: 80px;
   }
 
   .container{
     margin-top: 0;
+  }
+
+  .post-right{
+    padding: 10px;
+    width: 100%;
+  }
+
+  .post-left{
+    display:none;
+  }
+
+  .post .glyphicon {
+    margin-left: 20px;
+  }
+
+  .config-btns{
+    display: inline-block;
+    width: 100%;
+    border-bottom: 0;
+    border-top: 1px solid #efeeee;
+    margin-top: 20px;
+  }
+
+  .right{
+    display: none!important;
   }
 
 

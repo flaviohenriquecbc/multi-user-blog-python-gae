@@ -42,6 +42,22 @@
       {% endfor %}
     </div>
 
+
+    <div class="config-btns">
+      {% if p.created_by == userName %}
+        <div class="post-info">
+            <ul>
+                <li>
+                  <form action="/blog/{% print p.key().id() %}/delete" method="POST" id="form-delete-{{p.key().id()}}">
+                    <a onclick="if(confirm('Are you sure?')){document.getElementById('form-delete-{{p.key().id()}}').submit()}"><span><i class="glyphicon glyphicon glyphicon-remove"></i><span class="grey">delete</span></span></a>
+                  </form>
+                </li>
+                <li><a href="/blog/{% print p.key().id() %}/edit"><span><i class="glyphicon glyphicon glyphicon-pencil"></i><span class="grey">edit</span></a></span></li>
+            </ul>
+        </div>
+      {% endif %}
+    </div>
+
     {% if detailed %}
 
       <div class="post-comments">
