@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="error">{{error}}</div>
+
+  {% if post %}
+    {{post | safe}}
+  {% else %}
+    <p>Doh! Post not found!</p>
+  {% endif %}
+
+{% endblock %}

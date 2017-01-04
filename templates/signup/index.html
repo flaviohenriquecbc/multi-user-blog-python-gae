@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% set active_page = "signup" %}
+
+{% block content %}
+  <div class="form">
+    <h1>Singup</h1>
+    <form method="POST">
+      <label>
+        <span class="text">Username:</span>
+        <input type="text" name="username" value="{{params['username']}}">
+        {% if valid and not valid["username"]%}
+          <br><span class="error">That's not a valid username.</span>
+        {% endif %}
+      </label><br>
+      <label>
+        <span class="text">Password:</span>
+        <input type="password" name="password">
+        {% if valid and not valid["password"]%}
+          <br><span class="error">That wasn't a valid password.</span>
+        {% endif %}
+      </label><br>
+      <label>
+        <span class="text">Verify Password:</span>
+        <input type="password" name="verify">
+      </label><br>
+      <label>
+        <span class="text">Email(optional):</span>
+        <input type="text" name="email" value="{{params['email']}}">
+        {% if valid and not valid["email"]%}
+          <br><span class="error">That's not a valid email.</span>
+        {% endif %}
+      </label><br>
+      <button>Sign up</button>
+    </form>
+  </div>
+{% endblock %}

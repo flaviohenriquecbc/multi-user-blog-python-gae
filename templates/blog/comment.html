@@ -1,0 +1,16 @@
+<div class="comment">
+  <div class="post-info">
+      <ul>
+        <li><span class="green">{% print comment.user_name %}</span> <span class="grey">({% print comment.created.strftime("%b %d, %Y %H:%M") %})</span></li>
+        {% if comment.user_name == userName %}
+          <li class="right">
+            <form action="/comment/{% print comment.key().id() %}/delete" method="POST" id="form-delete-comment-{{comment.key().id()}}">
+              <a onclick="if(confirm('Are you sure?')){document.getElementById('form-delete-comment-{{comment.key().id()}}').submit()}"><span><i class="glyphicon glyphicon glyphicon-remove"></i><span class="grey">delete</span></span></a>
+            </form>
+          </li>
+          <li class="right"><a href="/comment/{% print comment.key().id() %}/edit"><span><i class="glyphicon glyphicon glyphicon-pencil"></i><span class="grey">edit</span></a></span></li>
+        {% endif %}
+      </ul>
+  </div>
+  <span>{{ comment.content }}</span>
+</div>

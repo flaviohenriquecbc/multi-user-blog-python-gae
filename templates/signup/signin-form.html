@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% set active_page = "signin" %}
+
+{% block content %}
+  <div class="form">
+    <h1>Singin</h1>
+    <form method="post">
+      <label>
+          <span class="text">Username:</span>
+          <input type="text" name="username" value="{{username}}">
+      </label><br>
+      <label>
+          <span class="text">Password:</span>
+          <input type="password" name="password" value="">
+      </label><br>
+
+      <label class="error">
+        {{error}}
+      </label><br>
+
+      <input type="submit">
+    </form>
+  </div>
+{% endblock %}

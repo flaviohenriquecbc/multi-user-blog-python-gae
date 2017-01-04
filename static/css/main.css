@@ -1,0 +1,300 @@
+body{
+  background-color: #3eb2a5!important;
+  padding: 0;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container{
+  margin: 20px 0 ;
+  background-color: white;
+  padding-left: 0!important;
+  padding-right: 0!important;
+
+  -webkit-box-shadow: 0px -5px 77px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px -5px 77px -12px rgba(0,0,0,0.75);
+  box-shadow: 0px -5px 77px -12px rgba(0,0,0,0.75);
+}
+
+nav{
+  background-image: url(../img/background.jpeg);
+  min-height: 240px;
+  background-size: cover;
+  /*background-position-y: -109px;*/
+  position: relative;
+}
+
+nav ul{
+  background-color: white;
+  border-bottom: 2px solid #efeeee;
+  list-style-type: none;
+  bottom: -10px;
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  padding-left: 0;
+}
+
+nav li{
+  color: rgb(184, 184, 184);
+  font-weight: bold;
+  line-height: 50px;
+  width: 19%;
+  display: inline-block;
+  text-align: center;
+}
+
+nav li.active a{
+  color: #3eb2a5;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #3eb2a5;
+
+}
+
+nav li .img{
+  border-radius: 50%;
+  border: 5px solid white;
+  width: 130px;
+  height: 130px;
+  background-color: #3eb2a5;
+  display: inline-block;
+  margin-top: -87px;
+  position: absolute;
+  margin-left: -65px;
+  background-image: url(../img/flavio.jpg);
+  background-size: cover;
+}
+
+.footer{
+  font-size: 12px;
+  border-top: 2px solid #efeeee;
+  padding: 10px;
+  text-align: center;
+  margin-top: 30px;
+  color: rgb(184, 184, 184);
+}
+
+.welcome{
+  width: 100%;
+  text-align: center;
+  color: rgb(184, 184, 184);
+  padding: 25px 0;
+}
+
+.post{
+  display: inline-block;
+  width: 100%;
+}
+
+.post-left,
+.post-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.post-left{
+  padding-left: 50px;
+  padding-right: 20px;
+  width: 150px;
+}
+
+.post-right{
+  padding-left: 30px;
+  max-width: 800px;
+  width: calc(100% - 150px);
+}
+
+.post .post-date{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid #efeeee;
+  color: #3eb2a5;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.post .post-info ul {
+  list-style-type: none;
+  padding: 0;
+  border-bottom: 1px solid #efeeee;
+}
+
+.post .post-info li {
+  display: inline-block;
+  color: #3eb2a5;
+}
+
+.post .post-info .grey{
+  color:rgb(184, 184, 184);
+}
+
+.post .glyphicon{
+  margin-left: 30px;
+  margin-right: 6px;
+}
+
+.post .post-info .green{
+  color: #3eb2a5;
+}
+
+.post .post-title{
+  font-size: 24px;
+  color: #2e3d49;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.post .post-content{
+  color: #525c65;
+  font-size: 16px;
+}
+
+.label {
+  text-align: right
+}
+
+.error {
+  color: red;
+  /* text-align: right; */
+  font-size: 12px;
+  font-weight: normal;
+  width: 100%;
+  display: inline-block;
+}
+
+.form{
+  text-align: center;
+}
+
+.form label{
+  text-align: left;
+}
+.form label .text,
+.form label div{
+  width: 115px;
+  display: inline-block;
+}
+
+.form h1{
+  font-size: 24px;
+  color: #2e3d49;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.new-article{
+  border: 2px solid #337ab7;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 17px;
+  color: #337ab7;
+}
+
+.form-add label{
+  width: 80%;
+}
+
+.form-add input[type=text],
+.form-add textarea{
+  width: 100%;
+}
+
+.form-add textarea{
+  height: 100px;
+}
+
+.new-article:hover,
+.new-article-active a{
+  border: 2px solid #3aa89b;
+  color: #3aa89b;
+  text-decoration: none;
+}
+
+.menu a:hover{
+  color: #3aa89b!important;
+  text-decoration: none!important;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #3aa89b;
+}
+
+.post-info a{
+  cursor: pointer;
+  color: grey;
+}
+
+.post-info a:hover{
+  color: #3aa89b!important;
+  padding-bottom: 2px;
+  /*text-decoration: none;*/
+}
+
+.liked a,
+.liked span{
+  color: #3aa89b!important;
+}
+
+.error{
+  width: inherit;
+}
+
+.right{
+  float: right
+}
+
+.post-comments .comments-info{
+  border-bottom: 1px solid #efeeee;
+  width: 100%;
+  margin-top: 20px;
+  padding: 5px 0;
+}
+
+.add-comment label,
+.add-comment label textarea{
+  width: 100%;
+}
+
+.comment{
+  margin: 10px 0;
+}
+
+.comment ul{
+  margin-bottom: 0;
+}
+
+.comment h5{
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.tags{
+  margin-top: 30px;
+}
+
+.tags span{
+  display: inline-block;
+  padding: 2px 10px;
+  background-color: #3eb2a5;
+  color: white;
+}
+
+@media(max-width: 750px){
+
+  nav li .img{
+    margin-top: -40px;
+    margin-left: -40px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .container{
+    margin-top: 0;
+  }
+
+
+}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% set active_page = "editpost" %}
+
+{% block content %}
+    <div class="form  form-add">
+      <h1>Edit Post</h1>
+
+      <form method="post">
+        <label>
+          <span class="text">Subject:</span><br>
+          <input type="text" name="subject" value="{{subject}}">
+        </label><br>
+
+        <label>
+          <span class="text">Content:</span><br>
+          <textarea name="content">{{content}}</textarea>
+        </label><br>
+
+        <label>
+          <span class="text">Tags:</span><br>
+          <input type="text" name="tags" placeholder="Tags (comma sepparated)" value="{{tags}}"></textarea>
+        </label><br>
+
+        <div class="error">{{error}}</div><br>
+
+        <input type="submit" value="Edit">
+        <button type="button" onclick="history.back()">Cancel</button>
+      </form>
+    </div>
+
+{% endblock %}

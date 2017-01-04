@@ -1,0 +1,67 @@
+<div class="post">
+  <div class="post-left">
+    <div class="post-date">
+      {{p.created.strftime("%b %d, %Y")}}
+    </div>
+  </div>
+  <div class="post-right">
+    <div class="post-info">
+        <ul>
+          <li><span class="grey">author:</span> <span class="green">{% print p.created_by %}</span></li>
+          {% if p.created_by == userName %}
+            <li><i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span class="grey">{% print p.nr_likes %} likes</span></li>
+          {% else %}
+            <li {% if p.you_liked %} class="liked" {% endif %}>
+              <form action="/blog/{% print p.key().id() %}/like" method="POST" id="form-like">
+                <a onclick="document.getElementById('form-like').submit()"><i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span class="grey">{% print p.nr_likes %} likes</span></a>
+              </form>
+            </li>
+          {% endif %}
+          <li><a href="/blog/{% print p.key().id() %}"><i class="glyphicon glyphicon glyphicon-comment"></i><span class="grey">{% print p.nr_comments %} comments</span></a></li>
+          {% if p.created_by == userName %}
+            <li class="right">
+              <form action="/blog/{% print p.key().id() %}/delete" method="POST" id="form-delete-{{p.key().id()}}">
+                <a onclick="if(confirm('Are you sure?')){document.getElementById('form-delete-{{p.key().id()}}').submit()}"><span><i class="glyphicon glyphicon glyphicon-remove"></i><span class="grey">delete</span></span></a>
+              </form>
+            </li>
+            <li class="right"><a href="/blog/{% print p.key().id() %}/edit"><span><i class="glyphicon glyphicon glyphicon-pencil"></i><span class="grey">edit</span></a></span></li>
+          {% endif %}
+        </ul>
+    </div>
+    <div class="post-title">
+      {{p.subject}}
+    </div>
+    <div class="post-content">
+      {{p._render_text | safe}}
+    </div>
+
+    <div class="tags">
+      Tags:
+      {% for tag in p.tags %}
+        <span>{{ tag }}</span>
+      {% endfor %}
+    </div>
+
+    {% if detailed %}
+
+      <div class="post-comments">
+        <h4 class="comments-info">Comments ({% print p.nr_comments %})</h4>
+        <div class="add-comment">
+          <form action="/blog/{% print p.key().id() %}/comment/add" method="POST">
+            <label>
+              <textarea name="content" {% if userName == '' %} disabled placeholder="Signin to comment..." {% else %} placeholder="Type your comment..." {% endif %}>{{content}}</textarea>
+            </label>
+            <div class="error">{{error}}</div>
+            <input type="submit" {% if userName == '' %} disabled placeholder="Signin to comment..." {% endif %}>
+          </form>
+        </div>
+        <div class="comments">
+          {% for comment in comments %}
+            {{ comment | safe }}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
