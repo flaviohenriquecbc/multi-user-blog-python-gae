@@ -12,7 +12,10 @@ class PostPage(PostHandler):
         user_id = self.read_secure_cookie('user_id')
 
         if user_id:
-            like = Like.all().filter('user_id =', int(user_id)).filter('post_id = ', int(post.key().id())).get()
+
+            like = Like.all().filter('user_id =',
+                        int(user_id)).filter('post_id = ', int(post.key().id())).get()
+
             if like and like.liked:
                 post.you_liked = True
 

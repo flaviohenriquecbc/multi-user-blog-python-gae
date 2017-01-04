@@ -17,6 +17,11 @@ class EditPage(PostHandler):
             self.error(404)
             return
 
+        if post.created_by != self.read_secure_cookie('user_name'):
+            error = "Permission denied: You cannot edit this post"
+            self.render("blog/permalink.html", subject=subject, content=content, error=error)
+            return
+
         tags = ','.join(post.tags)
         self.render('blog/editpost.html', subject=post.subject, content=post.content, tags = tags)
 
@@ -37,7 +42,7 @@ class EditPage(PostHandler):
                 return
 
             if post.created_by != self.read_secure_cookie('user_name'):
-                error = "Permission denied: You cannot delete this post"
+                error = "Permission denied: You cannot edit this post"
                 self.render("blog/permalink.html", subject=subject, content=content, error=error)
                 return
 

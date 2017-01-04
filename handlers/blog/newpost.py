@@ -20,8 +20,13 @@ class NewPost(Handler):
             tags_list = tags.split(",")
         created_by = self.read_secure_cookie('user_name')
 
+        if self.read_secure_cookie('user_id') == '':
+            self.redirect('/signin')
+            return
+
         if subject and content and tags and tags_list and len(tags_list) > 0:
-            p = Post(parent = blog_key(), subject = subject, content = content, created_by = created_by, tags = tags_list)
+            p = Post(parent = blog_key(), subject = subject,
+                        content = content, created_by = created_by, tags = tags_list)
             p.put()
             self.redirect('%s' % str(p.key().id()))
         else:

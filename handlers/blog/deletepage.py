@@ -20,6 +20,7 @@ class DeletePage(PostHandler):
         if post.created_by != self.read_secure_cookie('user_name'):
             error = "Permission denied: You cannot delete this post"
             self.render("blog/permalink.html", subject=subject, content=content, error=error)
+            return
 
         post.delete()
 

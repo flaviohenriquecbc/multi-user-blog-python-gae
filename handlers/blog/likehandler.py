@@ -17,6 +17,10 @@ class LikeHandler(Handler):
         key = db.Key.from_path('Post', int(post_id), parent=blog_key())
         post = db.get(key)
 
+        if self.read_secure_cookie('user_id') == post.created_by:
+            self.redirect('/')
+            return
+
         like = Like.all().filter('user_id =', int(user_id)).filter('post_id = ', int(post_id)).get()
 
         if like:

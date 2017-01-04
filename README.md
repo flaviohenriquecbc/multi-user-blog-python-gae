@@ -4,12 +4,10 @@ Multi User Blog Project for Udacity Full Stack Nanodegree
 
 You can find the live version of this project at: https://flavio-blog.appspot.com/
 
-<h3>Requirements</h3>
-<ul>
-  <li>Google App Engine</li>
-</ul>
+### Requirements
+* Google App Engine
 
-<h3>Running the project</h3>
+### Running the project
 1. Clone the project
 2. Install Google App Engine
 3. Import the application into the launcher.
