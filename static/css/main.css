@@ -295,10 +295,10 @@ textarea{
 @media(max-width: 750px){
 
   nav li .img{
-    margin-top: -40px;
+    margin-top: -34px;
     margin-left: -25px;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 
   .container{
