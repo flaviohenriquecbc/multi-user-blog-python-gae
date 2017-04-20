@@ -1,6 +1,6 @@
 # Flavio's Blog
 
-Multi User Blog Project for Udacity Full Stack Nanodegree
+Built a multi-user blog, hosted on Google App Engine, with comments and login functionality.
 
 You can find the live version of this project at: https://flavio-blog.appspot.com/
 
